@@ -17,7 +17,7 @@ def _createMap(symbols):
     for (name, cls) in symbols:
         if (type(cls) is type(object) and
             issubclass(cls, HolidayBase) and
-            cls is not HolidayBase):
+            cls is not HolidayBase and cls is not HolidaySum):
             holidayMap[name] = cls
             obj = cls()
             if hasattr(obj, "country"):
